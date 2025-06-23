@@ -62,7 +62,7 @@
 
 .product-grid-card p {
   margin: 5px;
-  color: #444;
+  color: #b4140f;
   padding: 5px;
   font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
@@ -209,7 +209,7 @@
 
 .product-table-card-body p {
   margin: 6px 0;
-  color: #777;
+  color: #a8120c;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
 
