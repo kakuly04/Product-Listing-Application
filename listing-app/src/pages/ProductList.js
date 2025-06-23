@@ -40,6 +40,7 @@ const ProductList = ({ products_listing, viewMode }) => {
                         <img src={product.images[0]} alt={product.title} />
                         <div className="product-table-card-body">
                             <h3>{product.title}</h3>
+                            <h4>Serial Number: {product.id}</h4>
                             <h4>₹{product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
                             <button onClick = {() => addToCart(product)}>Add to Cart</button>

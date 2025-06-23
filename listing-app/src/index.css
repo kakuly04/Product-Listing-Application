@@ -7,7 +7,14 @@
   color: #333;
 }
 
-/* styles.css or inline */
+.home{
+  margin: 10px;
+}
+.home h2{
+  margin: 5px;
+  text-align: center;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -43,13 +50,13 @@
 
 .product-grid-card h3 {
   margin: 5px;
-  font-size: 15px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: #000000;
 }
 
 .product-grid-card h4 {
   margin: 5px;
-  font-size: 15px;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: #193421;
 }
 
@@ -57,6 +64,7 @@
   margin: 5px;
   color: #444;
   padding: 5px;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 .product-grid-card button {
@@ -68,6 +76,8 @@
   cursor: pointer;
   display: block;
   margin: 0 auto;
+  min-width: 30%;
+  font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .product-grid-card button:hover {
@@ -98,7 +108,7 @@
 
 /* Brand / logo text */
 .navbar-brand h2 {
-  font-size: 24px;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   margin: 0;
   color: #333;
 }
@@ -108,6 +118,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
 }
 
 /* Toggle button */
@@ -120,6 +131,8 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  text-align: center;
 }
 
 .navbar-links button:hover {
@@ -136,6 +149,8 @@
   transition: color 0.2s ease, background-color 0.2s ease;
   background-color: #1e3727;
   color:#ffffff;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  text-align: center;
 }
 
 .navbar-links a:hover {
@@ -143,3 +158,75 @@
   color: #007bff;
 }
 
+.products-table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-table-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fffcec;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 16px;
+  gap: 20px;
+}
+
+.product-table-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.product-table-card:hover {
+  transform: translateY(-7px);
+}
+.product-table-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.product-table-card-body h3 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 6px 0;
+}
+
+.product-table-card-body h4 {
+  margin: 6px 0;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: #444;
+}
+
+.product-table-card-body p {
+  margin: 6px 0;
+  color: #777;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+.product-table-card-body button {
+  align-self: start;
+  padding: 10px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  min-width: 30%;
+  align-self: center;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+.product-table-card-body button:hover {
+  background-color: #0056b3;
+}
