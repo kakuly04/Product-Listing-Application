@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = ({viewMode, setViewMode}) => {
     const toggleViewMode = () => {
-        setViewMode((viewMode) => (viewMode === "grid" ? "table" : "grid"));
+        setViewMode((prev) => !prev);
     };
 
     return (
@@ -12,8 +12,9 @@ const NavBar = ({viewMode, setViewMode}) => {
             </div>
             <div className="navbar-links">
                 <button onClick={toggleViewMode}>
-                    {viewMode === "grid" ? "Switch to Table View" : "Switch to Grid View"}
+                    {viewMode ? "Switch to Table View" : "Switch to Grid View"}
                 </button>
+                <Link to="/cart">View Cart</Link>
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign Up</Link>
             </div>

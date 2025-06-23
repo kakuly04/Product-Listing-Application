@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState, useEffect } from "react";
 
-const ProductList = ({ products_listing }) => {
+const ProductList = ({ products_listing, viewMode }) => {
     const [cart, setCart] = useState([]);
     const key = `cart-${auth.currentUser?.uid}`;
 
@@ -18,19 +18,37 @@ const ProductList = ({ products_listing }) => {
     };
 
     return (
-        <div className="products-grid">
-            {products_listing.products.map(product => (
-                <div key={product.id} className="product-grid-card">
-                    <img src={product.images[0]} alt={product.title} />
-                    <div className="product-grid-card-body">
-                        <h3>{product.title}</h3>
-                        <h4>₹{product.price}</h4>
-                        <p>{product.stock} pieces left. Hurry!</p>
-                        <button onClick = {() => addToCart(product)}>Add to Cart</button>
+        <>
+        {viewMode ? (
+            <div className="products-grid">
+                {products_listing.products.map(product => (
+                    <div key={product.id} className="product-grid-card">
+                        <img src={product.images[0]} alt={product.title} />
+                        <div className="product-grid-card-body">
+                            <h3>{product.title}</h3>
+                            <h4>₹{product.price}</h4>
+                            <p>{product.stock} pieces left. Hurry!</p>
+                            <button onClick = {() => addToCart(product)}>Add to Cart</button>
+                        </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        ) : (
+            <div className="products-table">
+                {products_listing.products.map(product => (
+                    <div key={product.id} className="product-table-card">
+                        <img src={product.images[0]} alt={product.title} />
+                        <div className="product-table-card-body">
+                            <h3>{product.title}</h3>
+                            <h4>₹{product.price}</h4>
+                            <p>{product.stock} pieces left. Hurry!</p>
+                            <button onClick = {() => addToCart(product)}>Add to Cart</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        )}
+        </>
     ); 
 }
 
