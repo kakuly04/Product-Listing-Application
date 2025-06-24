@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState, useEffect } from "react";
 
-const ProductList = ({ products_listing, viewMode }) => {
+const ProductList = ({ products_listing, viewMode, searchQuery }) => {
     const [cart, setCart] = useState([]);
     const key = `cart-${auth.currentUser?.uid}`;
+    const filteredProducts = products_listing.products.filter(product =>
+        product.title.toLowerCase().includes((searchQuery || "").toLowerCase())
+    );
 
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem(key)) || [];
@@ -22,7 +25,7 @@ const ProductList = ({ products_listing, viewMode }) => {
         <>
         {viewMode ? (
             <div className="products-grid">
-                {products_listing.products.map(product => (
+                {filteredProducts.map(product => (
                     <div key={product.id} className="product-grid-card">
                         <img src={product.images[0]} alt={product.title} />
                         <div className="product-grid-card-body">
@@ -36,7 +39,7 @@ const ProductList = ({ products_listing, viewMode }) => {
             </div>
         ) : (
             <div className="products-table">
-                {products_listing.products.map(product => (
+                {filteredProducts.map(product => (
                     <div key={product.id} className="product-table-card">
                         <img src={product.images[0]} alt={product.title} />
                         <div className="product-table-card-body">

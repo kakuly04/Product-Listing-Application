@@ -10,13 +10,14 @@ import { useState } from 'react';
 import Cart from './pages/Cart';
 function App() {
   const [viewMode, setViewMode] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   return (
     <Router>
-      <NavBar viewMode={viewMode} setViewMode={setViewMode}/>
+      <NavBar viewMode={viewMode} setViewMode={setViewMode} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <Routes>
         <Route path = {'/login'} element ={<Login/>}/>
         <Route path = {'/signup'} element ={<SignUp/>}/>
-        <Route path = {'/'} element ={<ProtectedRoute><Home viewMode={viewMode}/></ProtectedRoute>}/>
+        <Route path = {'/'} element ={<ProtectedRoute><Home viewMode={viewMode} searchQuery={searchQuery}/></ProtectedRoute>}/>
         <Route path = {'/cart'} element ={<ProtectedRoute><Cart viewMode={viewMode}/></ProtectedRoute>}/>
       </Routes>
     </Router>

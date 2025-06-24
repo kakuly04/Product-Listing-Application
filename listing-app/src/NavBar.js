@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {auth } from "./firebase";
 import {signOut} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-const NavBar = ({viewMode, setViewMode}) => {
+const NavBar = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
     const user = auth.currentUser;
     const navigate = useNavigate();
     const toggleViewMode = () => {
@@ -29,6 +29,14 @@ const NavBar = ({viewMode, setViewMode}) => {
                 {user && <Link to="/" className="nav-main-button">View All Products</Link>}
             </div>
             <div className="navbar-links">
+                { user && (
+                    <input type = "text"
+                    className="search-bar"
+                    placeholder="Search Products"
+                    value = {searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                )}
                 {user &&
                 <button onClick={toggleViewMode}>
                     {viewMode ? "Switch to Table View" : "Switch to Grid View"}
