@@ -38,7 +38,7 @@
 
 .product-grid-card img {
   width: 100%;
-  height: auto; /* maintain full image without crop */
+  height: auto; /* maintains full image */
   display: block;
   object-fit: contain; /* prevent cropping */
 }
@@ -275,6 +275,70 @@
   font-size: 1rem;
   min-width: 150px;
   max-width: 200px;
+}
+
+.signup,
+.login {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 32px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup h2,
+.login h2 {
+  margin-bottom: 24px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.signup form,
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.signup form input,
+.login form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.signup form input:focus,
+.login form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.signup form button,
+.login form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup form button:hover,
+.login form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive signin and login pages*/
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 30px 16px;
+    padding: 24px;
+  }
 }
 
 
