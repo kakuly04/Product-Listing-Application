@@ -51,7 +51,13 @@ const Login = () => {
                 />
                 <button type="submit">Login</button>
             </form>
-            {error && <p className="error">{error}</p>}
+            {error && 
+            (<div className="error">
+                <p>⚠️ Failed to login.</p>
+                <p>Error: {error}</p>
+                <p>Please check your credentials.</p>
+            </div>
+            )}
         </div>
     );
 }

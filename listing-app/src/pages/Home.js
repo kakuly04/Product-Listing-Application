@@ -15,7 +15,13 @@ const Home = ({viewMode, searchQuery}) => {
     return (
         <div className="home">
             <h2>All Listings</h2>
-            {error && <div>{error}</div>}
+            {error && (
+                <div className="error">
+                    <p>Failed to load products.</p>
+                    <p>Error: {error}</p>
+                    <p>Please try refreshing the page.</p>
+                </div>
+            )}
             {isPending && <div>Loading...</div>}
             {listings && <ProductList products_listing = {listings} viewMode={viewMode} searchQuery={searchQuery}/>}
         </div>

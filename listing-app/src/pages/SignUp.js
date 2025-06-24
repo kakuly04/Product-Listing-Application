@@ -51,7 +51,13 @@ const SignUp = () => {
                 />
                 <button type="submit">Sign Up</button>
             </form>
-            {error && <p className="error">{error}</p>}
+            {error && 
+            (<div className="error">
+                <p>⚠️ Failed to Sign Up.</p>
+                <p>Error: {error}</p>
+                <p>Please try refreshing the page.</p>
+            </div>
+            )}
         </div>
     );
 }
