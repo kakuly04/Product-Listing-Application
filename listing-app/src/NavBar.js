@@ -15,6 +15,10 @@ const NavBar = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
         setViewMode((prev) => !prev);
     };
 
+    // -------------------- Function to handle user logout --------------------
+    // It signs out the user using Firebase authentication and redirects to the login page
+    // It also alerts the user about the successful logout or any error that occurs during the process
+    
     const handleLogout = async () => {
         try {
             await signOut(auth);
@@ -26,7 +30,6 @@ const NavBar = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
             alert("Error logging out: " + error.message);
         }
     }
-
 
     return (
         <nav className="navbar">
