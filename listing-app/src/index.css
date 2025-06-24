@@ -98,11 +98,11 @@
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 16px; /* spacing between title and button */
+  gap: 15px; /* spacing between title and button */
 }
 
 .nav-main-button {
-  background-color: #fcc40b;
+  background-color: #fcc921;
   color: #fff;
   padding: 8px 14px;
   border-radius: 6px;
@@ -130,13 +130,13 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   font-size: clamp(0.75rem, 0.95rem, 0.95rem);
 }
 
 /* Toggle button */
 .navbar-links button {
-  padding: 8px 14px;
+  padding: 8px;
   border: 1px solid #007bff;
   border-radius: 4px;
   background-color: #007bff;
@@ -144,8 +144,10 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  font-size: clamp(0.75rem, 0.85rem, 0.85rem);
   text-align: center;
+  min-width: 15%;
+  display: inline-block;
 }
 
 .navbar-links button:hover {
@@ -157,18 +159,48 @@
   text-decoration: none;
   font-weight: 500;
   color: #333;
-  padding: 8px;
+  padding: 6px;
   border-radius: 4px;
   transition: color 0.2s ease, background-color 0.2s ease;
-  background-color: #1e3727;
+  background-color: #06800a;
   color:#ffffff;
   font-size: clamp(0.75rem, 0.95rem, 0.95rem);
   text-align: center;
+  min-width: 10%;
+  display: inline-block;
 }
 
 .navbar-links a:hover {
   background-color: #f0f0f0;
   color: #007bff;
+}
+
+.navbar-links button.logging-out {
+  padding: 6px;
+  border: 1px solid #b40303;
+  border-radius: 4px;
+  background-color: #b40303;
+  color: rgb(253, 252, 238);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  text-align: center;
+  min-width: 12%; 
+  display: inline-block;
+}
+
+.navbar-links button.logging-out:hover {
+  background-color: #8a0909;
+}
+
+.search-bar {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .products-table {
@@ -246,32 +278,6 @@
 
 .cart-total{
   text-align: center;
-}
-
-.navbar-links button.logging-out {
-  padding: 8px 14px;
-  border: 1px solid #b40303;
-  border-radius: 4px;
-  background-color: #b40303;
-  color: rgb(253, 252, 238);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
-  text-align: center;
-}
-
-.navbar-links button.logging-out:hover {
-  background-color: #8a0909;
-}
-
-.search-bar {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  min-width: 150px;
-  max-width: 200px;
 }
 
 .signup,
