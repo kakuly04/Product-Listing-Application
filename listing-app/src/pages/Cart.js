@@ -30,7 +30,7 @@ const Cart = ({viewMode}) => {
                             <h3>{product.title}</h3>
                             <h4>₹{product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
-                            <button onClick = {() => removeFromCart(product)}>Remove From Cart</button>
+                            <button onClick = {() => removeFromCart(product.id)}>Remove From Cart</button>
                         </div>
                     </div>
                 ))}
@@ -45,13 +45,17 @@ const Cart = ({viewMode}) => {
                             <h4>Serial Number: {product.id}</h4>
                             <h4>₹{product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
-                            <button onClick = {() => removeFromCart(product)}>Remove From Cart</button>
+                            <button onClick = {() => removeFromCart(product.id)}>Remove From Cart</button>
                         </div>
                     </div>
                 ))}
             </div>
         )}
+        <div className="cart-total">
+            <h2>Total Payment Needed: ₹{totalPrice}</h2>
+        </div>
         </>
+        
     ); 
     
 }
