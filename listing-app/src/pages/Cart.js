@@ -12,10 +12,26 @@ import { useState, useEffect } from "react";
 const Cart = ({viewMode}) => {
     const [cart, setCart] = useState([]);
     const key = `cart-${auth.currentUser?.uid}`;
+    const [error, setError] = useState(null);
   
     useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem(key)) || [];
-        setCart(storedCart);
+        try {
+            const storedCart = localStorage.getItem(key);
+            if (storedCart) {
+                const parsedCart = JSON.parse(storedCart);
+                if (Array.isArray(parsedCart)) {
+                    setCart(parsedCart);
+                } else {
+                    throw new Error("Invalid cart data format in localStorage");
+                }
+            } else {
+                setCart([]);
+            }
+        } catch (err) {
+            setError("Failed to load cart data. Please try again later.");
+            console.error("Error loading cart data:", error);
+            setCart([]);
+        }
     }, [key]);
 
     // ---------------------- Function to remove an item from the cart ---------------------------
@@ -23,10 +39,16 @@ const Cart = ({viewMode}) => {
     // It also alerts the user that the product has been removed successfully
 
     const removeFromCart = (id) => {
-        const updatedCart = cart.filter(item => item.id !== id);
-        setCart(updatedCart);
-        localStorage.setItem(key, JSON.stringify(updatedCart));
-        alert("Product Removed Fron Cart Successfully!");
+        try {
+            const updatedCart = cart.filter(item => item.id !== id);
+            setCart(updatedCart);
+            localStorage.setItem(key, JSON.stringify(updatedCart));
+            alert("Product Removed Fron Cart Successfully!");
+        } catch (err) {
+            setError("Failed to remove item from cart. Please try again later.");
+            console.error("Error removing item from cart:", err);
+            alert("An error occurred while removing the item from the cart. Please try again later.");
+        }
     };
 
     // Calculates the total price of all items in the cart by summing up their prices
@@ -34,6 +56,15 @@ const Cart = ({viewMode}) => {
 
     // Renders the cart items in either grid or table view based on the viewMode prop
     // If viewMode is true, it displays the items in a grid format, otherwise in a table format
+    if (error) {
+        return (
+        <div className="cart-error-message">
+            <h2>{error}</h2>
+            <Link to="/products" className="back-to-products">Back to Products</Link>
+            <p>Please try again later.</p>
+        </div>
+        );
+    }
     return (
         <>
         {viewMode ? (

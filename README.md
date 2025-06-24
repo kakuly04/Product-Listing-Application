@@ -7,6 +7,7 @@ A responsive React.js application that allows users to browse products, view the
 - Add items to Cart with localStorage persistence
 - User Authentication (Login / Signup / Logout)
 - Responsive Design
+- Assumptions and Functionality descriptions are included in respective code files.
 
 ## 🛠 Tech Stack
 - React.js
@@ -35,11 +36,13 @@ cd listing-app
 3. Install dependencies:
 ```bash
 npm install
+npm install react-router-dom
+npm install firebase
 ```
 
 4. Firebase - Kindly use the provided firebase.js for demo purposes. For production or personal use, set up your own Firebase project and replace the config.
 
-5. Run the development server:
+5. Run the development server: Will start a local host
 ```bash
 npm start
 ```
