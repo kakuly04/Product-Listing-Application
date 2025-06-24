@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import ProtectedRoute from './ProtectedRoute';
 import NavBar from './NavBar';
 import { useState } from 'react';
+import Cart from './pages/Cart';
 function App() {
   const [viewMode, setViewMode] = useState(true);
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path = {'/login'} element ={<Login/>}/>
         <Route path = {'/signup'} element ={<SignUp/>}/>
         <Route path = {'/'} element ={<ProtectedRoute><Home viewMode={viewMode}/></ProtectedRoute>}/>
+        <Route path = {'/cart'} element ={<ProtectedRoute><Cart viewMode={viewMode}/></ProtectedRoute>}/>
       </Routes>
     </Router>
   );

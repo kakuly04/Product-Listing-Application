@@ -9,6 +9,7 @@ const NavBar = ({viewMode, setViewMode}) => {
         <nav className="navbar">
             <div className="navbar-brand">
                 <h2>Product Listing App</h2>
+                <Link to="/" className="nav-main-button">View All Products</Link>
             </div>
             <div className="navbar-links">
                 <button onClick={toggleViewMode}>
