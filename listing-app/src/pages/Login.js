@@ -1,3 +1,10 @@
+
+// ----------------------- Functionality to handle login --------------------------
+// It uses Firebase's signInWithEmailAndPassword method to authenticate the user
+// If successful, it clears the input fields and redirects to the home page
+// If there's an error, it sets the error state to display the error message
+// It also alerts the user about the success or failure of the login attempt
+
 import { useState } from "react";
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -8,7 +15,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-
+    
     const handleLogin = async (e) => {
         e.preventDefault();
         try {

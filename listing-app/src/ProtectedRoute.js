@@ -1,3 +1,8 @@
+
+// -------------- Functional Component for Protected Route --------------
+// This component checks if the user is authenticated before allowing access to certain routes
+// If the user is not authenticated, it redirects them to the login page
+
 import { Navigate } from "react-router-dom";
 import {auth } from "./firebase";
 

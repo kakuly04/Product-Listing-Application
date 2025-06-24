@@ -1,8 +1,15 @@
+
+// --------------------- Functionality to display a list of products ---------------------
+// The ProductList component displays a list of products fetched from the API
+// It allows users to view products in either grid or table format based on the viewMode
+// It also allows users to search for products by title and add them to their cart
+
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState, useEffect } from "react";
 
 const ProductList = ({ products_listing, viewMode, searchQuery }) => {
+    
     const [cart, setCart] = useState([]);
     const key = `cart-${auth.currentUser?.uid}`;
     const filteredProducts = products_listing.products.filter(product =>
@@ -14,6 +21,10 @@ const ProductList = ({ products_listing, viewMode, searchQuery }) => {
         setCart(storedCart);
     }, [key]);
 
+    // ---------------------- Function to add an item to the cart ---------------------------
+    // It adds the selected product item to the cart state and updates the localStorage
+    // It also alerts the user that the product has been added successfully
+    
     const addToCart = (product_item) => {
         const updatedCart = [...cart, product_item];
         setCart(updatedCart);

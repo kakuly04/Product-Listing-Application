@@ -1,7 +1,13 @@
+
+// ------------- Functional Component for Navigation Bar -------------
+// This component provides navigation links, search functionality, and view mode toggle for the product listing app
+// It also provides buttons for user authentication and logout functionality
+
 import { Link } from "react-router-dom";
 import {auth } from "./firebase";
 import {signOut} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
 const NavBar = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
     const user = auth.currentUser;
     const navigate = useNavigate();

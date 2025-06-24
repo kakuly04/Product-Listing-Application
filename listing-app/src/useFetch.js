@@ -1,4 +1,7 @@
+
+// ---------------- Functional Component to Fetch Data from an API ----------------
 // Creating a custom hook to fetch data from an API
+// This hook should handle the fetching logic, including error handling and loading state
 
 import { useState, useEffect } from 'react';
 const useFetch = (url) => {
