@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
 import {auth } from "./firebase";
+import {signOut} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 const NavBar = ({viewMode, setViewMode}) => {
     const user = auth.currentUser;
+    const navigate = useNavigate();
     const toggleViewMode = () => {
         setViewMode((prev) => !prev);
     };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            alert("Logged out successfully!");
+            navigate("/login"); // Redirecting to login page after logout
+        } catch (error) {
+            alert("Error logging out!");
+            console.error("Error logging out:", error);
+            alert("Error logging out: " + error.message);
+        }
+    }
+
 
     return (
         <nav className="navbar">
@@ -21,6 +37,11 @@ const NavBar = ({viewMode, setViewMode}) => {
                 { user && <Link to="/cart">View Cart</Link>}
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign Up</Link>
+                {user &&
+                <button className = "logging-out" onClick={handleLogout}>
+                    Logout ?
+                </button>
+                }
             </div>
         </nav>
     );

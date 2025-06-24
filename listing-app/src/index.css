@@ -105,7 +105,7 @@
 }
 
 .nav-main-button {
-  background-color: #1e3727;
+  background-color: #fcc40b;
   color: #fff;
   padding: 8px 14px;
   border-radius: 6px;
@@ -116,7 +116,7 @@
 }
 
 .nav-main-button:hover {
-  background-color: #004c3f;
+  background-color: #d7b508;
 }
 
 
@@ -249,4 +249,62 @@
 
 .cart-total{
   text-align: center;
+}
+
+.navbar-links button.logging-out {
+  padding: 8px 14px;
+  border: 1px solid #b40303;
+  border-radius: 4px;
+  background-color: #b40303;
+  color: rgb(253, 252, 238);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  text-align: center;
+}
+
+.navbar-links button.logging-out:hover {
+  background-color: #8a0909;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .navbar-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .navbar-links a,
+  .navbar-links button {
+    flex: 1 1 auto;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .navbar-links button.logging-out {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+  .nav-main-button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
 }

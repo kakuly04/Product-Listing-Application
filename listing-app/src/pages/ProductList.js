@@ -15,6 +15,7 @@ const ProductList = ({ products_listing, viewMode }) => {
         const updatedCart = [...cart, product_item];
         setCart(updatedCart);
         localStorage.setItem(key, JSON.stringify(updatedCart));
+        alert("Product Added to Cart Successfully!");
     };
 
     return (

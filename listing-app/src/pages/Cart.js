@@ -15,6 +15,7 @@ const Cart = ({viewMode}) => {
         const updatedCart = cart.filter(item => item.id !== id);
         setCart(updatedCart);
         localStorage.setItem(key, JSON.stringify(updatedCart));
+        alert("Product Removed Fron Cart Successfully!");
     };
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
@@ -52,7 +53,14 @@ const Cart = ({viewMode}) => {
             </div>
         )}
         <div className="cart-total">
-            <h2>Total Payment Needed: ₹{totalPrice}</h2>
+            {cart.length > 0 ? (
+                <div className="cart-summary">
+                    <h2>Total Price: ₹{totalPrice}</h2>
+                    <Link to="/checkout" className="checkout-button">Proceed to Checkout</Link>
+                </div>
+            ) : (
+                <h2>Your cart is empty. Click on the View All Products button in the Navbar to add some products!</h2>
+            )}
         </div>
         </>
         
