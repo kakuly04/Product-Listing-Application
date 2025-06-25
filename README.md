@@ -25,7 +25,7 @@ A responsive React.js application that allows users to browse products, view the
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/product-listing-app.git
+git clone https://github.com/your-username/Product-Listing-App.git
 ```
 
 2. Navigate to the project folder:
