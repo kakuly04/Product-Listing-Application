@@ -52,11 +52,13 @@ const NavBar = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
                 </button>
                 }
                 { user && <Link to="/cart">View Cart</Link>}
-                <Link to="/login">Login</Link>
+                <Link to="/login">
+                    Login
+                </Link>
                 <Link to="/signup">Sign Up</Link>
                 {user &&
                 <button className = "logging-out" onClick={handleLogout}>
-                    Logout ?
+                    Logout
                 </button>
                 }
             </div>

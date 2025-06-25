@@ -1,7 +1,12 @@
 * {
-  margin: 5px;
   font-family: "Roboto";
   color: #333;
+}
+
+/* Resetting page defaults */
+html, body, #root {
+  margin: 0;
+  padding: 0;
 }
 
 .home{
@@ -9,7 +14,8 @@
 }
 
 .home h2{
-  margin: 5px;
+  margin-top: 30px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
@@ -24,7 +30,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #fff6e8;
+  background-color: #fdfdf8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
   padding: 10px;
@@ -67,7 +73,7 @@
 
 .product-grid-card button {
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #0056b3;
   border: none;
   border-radius: 4px;
   color: white;
@@ -79,45 +85,33 @@
 }
 
 .product-grid-card button:hover {
-  background-color: #0056b3;
+  background-color: #012d5d;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fcecec;
-  padding: 16px 24px;
-  border-radius: 8px;
-  margin: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0.05, 0.05, 0.3);
+  background-color: #fcfaf5;
   flex-wrap: wrap;
-  min-height: 50px; 
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 15px; /* spacing between title and button */
+  gap: 15px;
 }
 
-.nav-main-button {
-  background-color: #fcc921;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
-  transition: background-color 0.2s ease;
-  text-align: center;
-}
-
-.nav-main-button:hover {
-  background-color: #d7b508;
-}
-
-
-/* Brand/text */
 .navbar-brand h2 {
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   margin: 0;
@@ -125,8 +119,24 @@
   text-align: center;
 }
 
+.nav-main-button {
+  background-color: #fcc100;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  transition: background-color 0.2s ease;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  justify-content: center;
+}
 
-/* Right section*/
+.nav-main-button:hover {
+  background-color: #d7b508;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -136,22 +146,23 @@
 
 /* Toggle button */
 .navbar-links button {
-  padding: 8px;
-  border: 1px solid #007bff;
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #0056b3;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: rgb(253, 252, 238);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-size: clamp(0.75rem, 0.85rem, 0.85rem);
-  text-align: center;
-  min-width: 15%;
-  display: inline-block;
+  font-size: clamp(0.75rem, 0.75rem, 0.75rem);
+  min-width: 10%;
+  justify-content: center;
+  display: flex;
 }
 
 .navbar-links button:hover {
-  background-color: #0056b3;
+  background-color: #012d5d;
 }
 
 /* Navigation links */
@@ -164,16 +175,18 @@
   transition: color 0.2s ease, background-color 0.2s ease;
   background-color: #06800a;
   color:#ffffff;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  font-size: clamp(0.75rem, 0.75rem, 0.75rem);
+  justify-content: center;
   text-align: center;
   min-width: 10%;
-  display: inline-block;
+  display: flex;
 }
 
 .navbar-links a:hover {
   background-color: #f0f0f0;
-  color: #007bff;
+  color: #0056b3;
 }
+
 
 .navbar-links button.logging-out {
   padding: 6px;
@@ -184,10 +197,11 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  font-size: clamp(0.75rem, 0.75rem, 0.75rem);
+  min-width: 10%; 
+  display: flex;
+  justify-content: center;
   text-align: center;
-  min-width: 12%; 
-  display: inline-block;
 }
 
 .navbar-links button.logging-out:hover {
@@ -203,6 +217,8 @@
   max-width: 200px;
 }
 
+
+
 .products-table {
   display: flex;
   flex-direction: column;
@@ -215,7 +231,7 @@
   align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #fffcec;
+  background-color: #fdfdf8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   padding: 16px;
@@ -261,7 +277,7 @@
 .product-table-card-body button {
   align-self: start;
   padding: 10px 24px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
   border-radius: 4px;
@@ -273,7 +289,7 @@
 }
 
 .product-table-card-body button:hover {
-  background-color: #0056b3;
+  background-color: #012d5d;
 }
 
 .cart-total{
@@ -315,14 +331,14 @@
 
 .signup form input:focus,
 .login form input:focus {
-  border-color: #007bff;
+  border-color: #0056b3;
   outline: none;
 }
 
 .signup form button,
 .login form button {
   padding: 12px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
   font-size: 1rem;
@@ -333,7 +349,7 @@
 
 .signup form button:hover,
 .login form button:hover {
-  background-color: #0056b3;
+  background-color: #012d5d;
 }
 
 /* Responsive signin and login pages*/
@@ -346,7 +362,7 @@
 
 
 /* Responsive Navbar */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;

@@ -33,11 +33,12 @@ git clone https://github.com/your-username/product-listing-app.git
 cd listing-app
 ```
 
-3. Install dependencies:
+3. Install dependencies (refer to package.json for more details):
 ```bash
 npm install
 npm install react-router-dom
 npm install firebase
+npm i bootstrap-icons
 ```
 
 4. Firebase - Kindly use the provided firebase.js for demo purposes. For production or personal use, set up your own Firebase project and replace the config.
