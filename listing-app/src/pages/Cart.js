@@ -51,6 +51,12 @@ const Cart = ({viewMode}) => {
             alert("An error occurred while removing the item from the cart. Please try again later.");
         }
     };
+    // ---------------------- Function to handle checkout functionality ---------------------------
+    // Currently, it is a placeholder that alerts the user that the checkout functionality is not implemented
+    const handleCheckout = () => {
+        // Placeholder for future checkout functionality
+        alert("Checkout functionality is not implemented yet.");
+    };
 
     // Calculates the total price of all items in the cart by summing up their prices
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
@@ -104,7 +110,7 @@ const Cart = ({viewMode}) => {
             {cart.length > 0 ? (
                 <div className="cart-summary">
                     <h2>Total Price: ₹ {totalPrice.toFixed(2)}</h2>
-                    <button className="checkout-button">Proceed to Checkout</button>
+                    <button className="checkout-button" onClick={handleCheckout}>Proceed to Checkout</button>
                 </div>
             ) : (
                 <h2>Your cart is empty. Click on the View All Products button in the Navbar to add some products!</h2>
