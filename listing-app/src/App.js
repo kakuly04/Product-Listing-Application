@@ -8,13 +8,14 @@ import ProtectedRoute from './ProtectedRoute';
 import NavBar from './NavBar';
 import { useState } from 'react';
 import Cart from './pages/Cart';
+import NavBar_Menu from './NavBar_2';
 
 function App() {
   const [viewMode, setViewMode] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   return (
     <Router>
-      <NavBar viewMode={viewMode} setViewMode={setViewMode} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+      <NavBar_Menu viewMode={viewMode} setViewMode={setViewMode} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <Routes>
         <Route path = {'/login'} element ={<Login/>}/>
         <Route path = {'/signup'} element ={<SignUp/>}/>

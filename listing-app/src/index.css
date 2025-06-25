@@ -122,12 +122,12 @@ html, body, #root {
 }
 
 .nav-main-button {
-  background-color: #fcc100;
+  background-color: #0056b3;
   color: #fff;
-  padding: 8px 14px;
+  padding: 7.5px;
   border-radius: 6px;
   text-decoration: none;
-  font-size: clamp(0.75rem, 0.95rem, 0.95rem);
+  font-size: clamp(0.75rem, 0.75rem, 0.75rem);
   transition: background-color 0.2s ease;
   justify-content: center;
   text-align: center;
@@ -136,7 +136,7 @@ html, body, #root {
 }
 
 .nav-main-button:hover {
-  background-color: #d7b508;
+  background-color: #012d5d;
 }
 
 .navbar-links {
@@ -148,13 +148,13 @@ html, body, #root {
 
 /* Toggle button */
 .navbar-links button {
-  padding: 6px;
+  padding: 6.5px;
   text-align: center;
   border: 1px solid #0056b3;
   border-radius: 4px;
   background-color: #0056b3;
   color: rgb(253, 252, 238);
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease;
   font-size: clamp(0.75rem, 0.75rem, 0.75rem);
@@ -170,9 +170,9 @@ html, body, #root {
 /* Navigation links */
 .navbar-links a {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   color: #333;
-  padding: 6px;
+  padding: 7.5px;
   border-radius: 4px;
   transition: color 0.2s ease, background-color 0.2s ease;
   background-color: #06800a;
@@ -216,11 +216,8 @@ html, body, #root {
   border: 1px solid #ccc;
   font-size: 1rem;
   min-width: 150px;
-  max-width: 200px;
   height: 15px;
 }
-
-
 
 .products-table {
   display: flex;
@@ -454,8 +451,65 @@ html, body, #root {
   background: rgba(143, 143, 143, 0.6);
 }
 
+
+.navbar-links div.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-links button.menu-button {
+  background-color: #0056b3;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.navbar-links div.menu-container div.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  width: 100%;
+}
+
+.navbar-links div.menu-container div.dropdown-menu a{
+  display: block;             
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+}
+.navbar-links div.menu-container div.dropdown-menu button{
+  padding: 10px;
+  color: #ffffff;
+  background-color: #c50707;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+.navbar-links div.menu-container div.dropdown-menu a:hover {
+  background-color: #e5e1e1;
+}
+.navbar-links div.menu-container div.dropdown-menu button:hover {
+  background-color: #8f0303;
+}
+
 /* Responsive Navbar */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -470,6 +524,12 @@ html, body, #root {
     align-items: center; 
   }
 
+  .nav-main-button {
+    width: 83%;
+    margin-top: 7px;
+    flex: 1 1 auto;
+  }
+
   .navbar-links {
     display: flex;
     flex-wrap: wrap;
@@ -479,6 +539,30 @@ html, body, #root {
     width: 100%;
   }
 
+  .search-bar {
+    flex: 0 1 calc(50% - 30px);
+    text-align: center;
+    min-width: 60px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+  .navbar-links a,
+  .navbar-links button{
+    flex: 0 1 calc(50% - 30px);
+    text-align: center;
+    min-width: 60px;
+    padding: 6.5px;
+    box-sizing: border-box;
+  }
+
+  .navbar-links div.menu-container{
+    flex: 0 1 calc(50% - 30px);
+    text-align: center;
+    min-width: 60px;
+    padding: 6.5px;
+    box-sizing: border-box;
+  }
+  /*
   .navbar-links a,
   .navbar-links button {
     flex: 0 1 calc(50% - 12px);
@@ -494,20 +578,5 @@ html, body, #root {
     min-width: 120px;
     padding: 7px;
     box-sizing: border-box;
-  }
-  .nav-main-button {
-    width: 60%;
-    text-align: center;
-    margin-top: 7px;
-    flex: 1 1 auto;
-  }
-  .search-bar {
-    flex: 0 1 calc(50% - 12px);
-    text-align: center;
-    min-width: 120px;
-    padding: 14px;
-    box-sizing: border-box;
-  }
+  }*/
 }
-
-

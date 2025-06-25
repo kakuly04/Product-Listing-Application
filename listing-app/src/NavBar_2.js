@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import {auth } from "./firebase";
 import {signOut} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 const NavBar_Menu = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
     const user = auth.currentUser;
@@ -14,6 +15,8 @@ const NavBar_Menu = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
     const toggleViewMode = () => {
         setViewMode((prev) => !prev);
     };
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     // -------------------- Function to handle user logout --------------------
     // It signs out the user using Firebase authentication and redirects to the login page
@@ -52,15 +55,16 @@ const NavBar_Menu = ({viewMode, setViewMode, searchQuery, setSearchQuery}) => {
                 </button>
                 }
                 { user && <Link to="/cart">View Cart</Link>}
-                <Link to="/login">
-                    Login
-                </Link>
-                <Link to="/signup">Sign Up</Link>
-                {user &&
-                <button className = "logging-out" onClick={handleLogout}>
-                    Logout
-                </button>
-                }
+                <div className = "menu-container">
+                    <button onClick={toggleMenu} className="menu-button">Profile Menu</button>
+                    {isMenuOpen && (
+                        <div className="dropdown-menu">
+                            <Link to="/login">Login</Link>
+                            <Link to="/signup">Sign Up</Link>
+                            {user && <button className = "logging-out" onClick={handleLogout}>Logout</button>}
+                        </div>
+                    )}
+                </div>
             </div>
         </nav>
     );
