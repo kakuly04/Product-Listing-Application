@@ -62,6 +62,7 @@ html, body, #root {
   margin: 5px;
   font-size: clamp(1rem, 2vw, 1.1rem);
   color: #193421;
+  font-weight: 300;
 }
 
 .product-grid-card p {
@@ -69,6 +70,7 @@ html, body, #root {
   color: #b4140f;
   padding: 5px;
   font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-style: italic;
 }
 
 .product-grid-card button {
@@ -267,12 +269,14 @@ html, body, #root {
   margin: 6px 0;
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   color: #444;
+  font-weight: 300;
 }
 
 .product-table-card-body p {
   margin: 6px 0;
   color: #a8120c;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-style: italic;
 }
 
 .product-table-card-body button {
@@ -295,6 +299,32 @@ html, body, #root {
 
 .cart-total{
   text-align: center;
+  margin: 20px;
+}
+
+.cart-total h2 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #333;
+  font-style: italic;
+}
+
+.cart-total div.cart-summary button {
+  padding: 10px 20px;
+  background-color: #a40802;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  min-width: 30%;
+}
+
+.cart-title{
+  align-content: center;
+  text-align: center;
+  margin: 20px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #103404;
 }
 
 .signup,
@@ -389,6 +419,38 @@ html, body, #root {
 }
 
 .carousel .control-arrow:hover {
+  background: rgba(143, 143, 143, 0.6);
+}
+
+
+.my-carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.my-carousel .slide img {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.my-carousel .legend {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 4px;
+  bottom: 20px;
+}
+
+.my-carousel .control-arrow {
+  background: rgba(0, 0, 0, 0);
+}
+
+.my-carousel .control-arrow:hover {
   background: rgba(143, 143, 143, 0.6);
 }
 

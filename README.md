@@ -43,7 +43,12 @@ npm i bootstrap-icons
 
 4. Firebase - Kindly use the provided firebase.js for demo purposes. For production or personal use, set up your own Firebase project and replace the config.
 
-5. Run the development server: Will start a local host
+5. Change folder
+```bash
+cd listing-app
+```
+
+6. Run the development server: Will start a local host
 ```bash
 npm start
 ```

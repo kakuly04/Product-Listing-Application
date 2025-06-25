@@ -8,7 +8,7 @@
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState, useEffect } from "react";
-import MyCarousel from '../Carousel';
+import MyCarousel_2 from '../Carousel_2';
 
 const Cart = ({viewMode}) => {
     const [cart, setCart] = useState([]);
@@ -68,7 +68,8 @@ const Cart = ({viewMode}) => {
     }
     return (
         <>
-        <MyCarousel/>
+        <MyCarousel_2/>
+        <h1 className="cart-title">🛒 Welcome to Your Cart</h1>
         {viewMode ? (
             <div className="products-grid">
                 {cart.map(product => (
@@ -76,7 +77,7 @@ const Cart = ({viewMode}) => {
                         <img src={product.images[0]} alt={product.title} />
                         <div className="product-grid-card-body">
                             <h3>{product.title}</h3>
-                            <h4>₹{product.price}</h4>
+                            <h4>₹{ product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
                             <button onClick = {() => removeFromCart(product.id)}>Remove From Cart</button>
                         </div>
@@ -91,7 +92,7 @@ const Cart = ({viewMode}) => {
                         <div className="product-table-card-body">
                             <h3>{product.title}</h3>
                             <h4>Serial Number: {product.id}</h4>
-                            <h4>₹{product.price}</h4>
+                            <h4>₹ {product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
                             <button onClick = {() => removeFromCart(product.id)}>Remove From Cart</button>
                         </div>
@@ -102,7 +103,7 @@ const Cart = ({viewMode}) => {
         <div className="cart-total">
             {cart.length > 0 ? (
                 <div className="cart-summary">
-                    <h2>Total Price: ₹{totalPrice}</h2>
+                    <h2>Total Price: ₹ {totalPrice.toFixed(2)}</h2>
                     <button className="checkout-button">Proceed to Checkout</button>
                 </div>
             ) : (

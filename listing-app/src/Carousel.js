@@ -6,12 +6,12 @@ const MyCarousel = () => {
     
     <Carousel autoPlay infiniteLoop showThumbs={false}>
         <div>
-            <img src="https://media.licdn.com/dms/image/v2/D5612AQEBAKHjibQIIg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1713421601369?e=2147483647&v=beta&t=fyhzNBQBu0X55yzkg8unkv9n_9th5PD_glAgiIht_bo" alt="Slide 1" />
+            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1" />
             <p className="legend">Looking for cosmetics?</p>
         </div>
         <div>
-            <img src="https://t4.ftcdn.net/jpg/12/40/10/91/360_F_1240109131_clQTODnd402HTEqCBmvbxf7sL2OuIbt7.jpg" alt="Slide 2" />
-            <p className="legend">You are at the right place!</p>
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D" />
+            <p className="legend">Don't worry we have more than just costmetics!</p>
         </div>
     </Carousel>
   );
