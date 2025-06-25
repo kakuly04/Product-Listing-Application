@@ -576,12 +576,6 @@ html, body, #root {
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 430px) {
-    .product-table-card {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
   /* FOR NAVBAR-1
   .navbar-links a,
   .navbar-links button {
@@ -599,4 +593,11 @@ html, body, #root {
     padding: 7px;
     box-sizing: border-box;
   }*/
+}
+/*Assumption: For extremely small screens table is similar to grid*/
+@media screen and (max-width: 430px) {
+  .product-table-card {
+    flex-direction: column;
+    align-items: center;
+  }
 }
