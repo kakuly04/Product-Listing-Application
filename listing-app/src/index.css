@@ -209,12 +209,13 @@ html, body, #root {
 }
 
 .search-bar {
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
   min-width: 150px;
   max-width: 200px;
+  height: 15px;
 }
 
 
@@ -360,6 +361,38 @@ html, body, #root {
   }
 }
 
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.carousel .slide img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel .legend {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 4px;
+  bottom: 20px;
+}
+
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0);
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(143, 143, 143, 0.6);
+}
+
+
 
 /* Responsive Navbar */
 @media screen and (max-width: 1000px) {
@@ -371,13 +404,14 @@ html, body, #root {
 
   .navbar-brand {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
     width: 100%;
     align-items: center; 
   }
 
   .navbar-links {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
@@ -387,27 +421,33 @@ html, body, #root {
 
   .navbar-links a,
   .navbar-links button {
-    flex: 1 1 auto;
+    flex: 0 1 calc(50% - 12px);
     text-align: center;
     min-width: 120px;
+    padding: 7px;
+    box-sizing: border-box;
   }
 
   .navbar-links button.logging-out {
-    flex: 1 1 auto;
+    flex: 0 1 calc(50% - 12px);
+    text-align: center;
     min-width: 120px;
+    padding: 7px;
+    box-sizing: border-box;
   }
   .nav-main-button {
     width: 60%;
     text-align: center;
-    display: block;
-    margin-top: 10px;
+    margin-top: 7px;
     flex: 1 1 auto;
   }
   .search-bar {
-    width: 60%;
-    margin-top: 10px;
-    flex: 1 1 auto;
-    display: block;
+    flex: 0 1 calc(50% - 12px);
     text-align: center;
+    min-width: 120px;
+    padding: 14px;
+    box-sizing: border-box;
   }
 }
+
+

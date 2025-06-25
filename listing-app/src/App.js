@@ -8,6 +8,7 @@ import ProtectedRoute from './ProtectedRoute';
 import NavBar from './NavBar';
 import { useState } from 'react';
 import Cart from './pages/Cart';
+
 function App() {
   const [viewMode, setViewMode] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");

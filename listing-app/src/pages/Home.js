@@ -6,6 +6,8 @@
 
 import useFetch from "../useFetch";
 import ProductList from "./ProductList";
+import MyCarousel from '../Carousel';
+
 const Home = ({viewMode, searchQuery}) => {
 
     const {data: listings, isPending, error} = useFetch('https://dummyjson.com/products');
@@ -14,7 +16,8 @@ const Home = ({viewMode, searchQuery}) => {
     
     return (
         <div className="home">
-            <h2>All Listings</h2>
+            <MyCarousel />
+            <h2>Welcome! What would you like to shop today?</h2>
             {error && (
                 <div className="error">
                     <p>Failed to load products.</p>
