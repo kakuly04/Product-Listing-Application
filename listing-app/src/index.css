@@ -392,8 +392,6 @@ html, body, #root {
   background: rgba(143, 143, 143, 0.6);
 }
 
-
-
 /* Responsive Navbar */
 @media screen and (max-width: 1000px) {
   .navbar {

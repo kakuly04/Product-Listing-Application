@@ -8,7 +8,8 @@
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState, useEffect } from "react";
- 
+import MyCarousel from '../Carousel';
+
 const Cart = ({viewMode}) => {
     const [cart, setCart] = useState([]);
     const key = `cart-${auth.currentUser?.uid}`;
@@ -67,6 +68,7 @@ const Cart = ({viewMode}) => {
     }
     return (
         <>
+        <MyCarousel/>
         {viewMode ? (
             <div className="products-grid">
                 {cart.map(product => (
