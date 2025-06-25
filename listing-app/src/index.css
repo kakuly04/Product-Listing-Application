@@ -233,11 +233,16 @@ html, body, #root {
   border-radius: 8px;
   background-color: #fdfdf8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  overflow:hidden;
   padding: 16px;
   gap: 20px;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
+.product-table-card:hover {
+  transform: translateY(-7px);
+}
 .product-table-card img {
   width: 150px;
   height: 150px;
@@ -247,9 +252,7 @@ html, body, #root {
   flex-shrink: 0;
 }
 
-.product-table-card:hover {
-  transform: translateY(-7px);
-}
+
 .product-table-card-body {
   display: flex;
   flex-direction: column;
@@ -276,7 +279,17 @@ html, body, #root {
   font-style: italic;
 }
 
-.product-table-card-body button {
+.product-table-card-submit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 1;
+  margin: 5px;
+}
+
+.product-table-card-submit button{
+  display: flex;
   align-self: start;
   padding: 10px 24px;
   background-color: #0056b3;
@@ -285,12 +298,12 @@ html, body, #root {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  min-width: 30%;
+  min-width: 50%;
   align-self: center;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
 
-.product-table-card-body button:hover {
+.product-table-card-submit button:hover {
   background-color: #012d5d;
 }
 
@@ -561,6 +574,13 @@ html, body, #root {
     min-width: 60px;
     padding: 6.5px;
     box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 400px) {
+    .product-table-card {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   /* FOR NAVBAR-1
   .navbar-links a,

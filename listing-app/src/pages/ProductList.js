@@ -58,6 +58,8 @@ const ProductList = ({ products_listing, viewMode, searchQuery }) => {
                             <h4>Serial Number: {product.id}</h4>
                             <h4>₹ {product.price}</h4>
                             <p>{product.stock} pieces left. Hurry!</p>
+                        </div>
+                        <div className="product-table-card-submit">
                             <button onClick = {() => addToCart(product)}>Add to Cart</button>
                         </div>
                     </div>
